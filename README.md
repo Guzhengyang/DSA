@@ -1,4 +1,4 @@
-# DSA
+# DSA(Data Structure and Algorithm)
 Resources for data structure and algorithm:
 
 1. http://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
