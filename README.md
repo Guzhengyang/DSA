@@ -6,3 +6,5 @@ Resources for data structure and algorithm:
 2. http://wiki.jikexueyuan.com/project/for-offer/
 
 3. https://www.nowcoder.com/ta/coding-interviews
+
+http://blog.csdn.net/column/details/ms100.html
