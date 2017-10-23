@@ -85,6 +85,29 @@ def sort_quick(seq):
         return left + [pivot] + right
 
 
+def heapify(seq, n, i):
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+    if (left < n) and (seq[left] > seq[largest]):
+        largest = left
+    if (right < n) and (seq[right] > seq[largest]):
+        largest = right
+    if largest != i:
+        seq[i], seq[largest] = seq[largest], seq[i]
+        heapify(seq, n, largest)
+
+
+def sort_heap(seq):
+    n = len(seq)
+    for i in range(n - 1, -1, -1):
+        heapify(seq, n, i)
+    for i in range(n - 1, 0, -1):
+        seq[0], seq[i] = seq[i], seq[0]
+        heapify(seq, i, 0)
+    return seq
+
+
 if __name__ == '__main__':
     # seq_sorted = [1, 3, 5, 7, 9]
     # print('binary search: ', search_binary(seq_sorted, 5))
@@ -93,5 +116,7 @@ if __name__ == '__main__':
     # print('bubble sort: ', sort_bubble(seq_unsorted))
     # print('selection sort: ', sort_selection(seq_unsorted))
     # print('insertion sort: ', sort_insertion(seq_unsorted))
-    print('merge sort: ', sort_merge(seq_unsorted))
-    print('quick sort: ', sort_quick(seq_unsorted))
+    # print('merge sort: ', sort_merge(seq_unsorted))
+    # print('quick sort: ', sort_quick(seq_unsorted))
+    # sort_heap(seq_unsorted)
+    print(sort_heap(seq_unsorted))
